@@ -66,7 +66,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', { username, password });
+      const response = await axios.post('https://zenden-backend.onrender.com/auth/login', { username, password });
       localStorage.setItem('token', response.data.token);
       toast.success("Login successful! Redirecting...");
       setTimeout(() => {

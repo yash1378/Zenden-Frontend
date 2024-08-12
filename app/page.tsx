@@ -107,7 +107,7 @@ const Home: React.FC = () => {
 
       try {
         const response = await axios.get<TaskResponse>(
-          "http://localhost:5000/tasks",
+          "https://zenden-backend.onrender.com/tasks",
           {
             headers: {
               Authorization: `Bearer ${storedToken}`,
@@ -133,7 +133,7 @@ const Home: React.FC = () => {
 
     try {
       const response = await axios.post<Task>(
-        "http://localhost:5000/tasks",
+        "https://zenden-backend.onrender.com/tasks",
         task,
         {
           headers: {
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
       if (!task) return;
 
       const response = await axios.put<Task>(
-        `http://localhost:5000/tasks/${id}`,
+        `https://zenden-backend.onrender.com/tasks/${id}`,
         { completed: !task.completed },
         {
           headers: {
@@ -181,7 +181,7 @@ const Home: React.FC = () => {
     if (!token) return;
 
     try {
-      await axios.delete(`http://localhost:5000/tasks/${id}`, {
+      await axios.delete(`https://zenden-backend.onrender.com/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

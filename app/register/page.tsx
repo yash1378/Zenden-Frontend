@@ -41,7 +41,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/auth/register', { username, password });
+      await axios.post('https://zenden-backend.onrender.com/auth/register', { username, password });
       toast.success("Registration successful!");
       window.location.href = '/login';
     } catch (err) {
